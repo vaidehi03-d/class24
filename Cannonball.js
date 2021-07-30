@@ -1,4 +1,4 @@
-class cannonBall {
+class CannonBall {
     constructor(x, y) {
       var options = {
           restitution:0.8,
