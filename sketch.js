@@ -1,3 +1,25 @@
+Skip to content
+whitehatjr
+/
+PiratesInvasionStage-2
+adding movements to the cannon and shooting the cannonball out of it.
+
+ MIT License
+ 0 stars  4 forks
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+More
+PiratesInvasionStage-2/sketch.js /
+
+whitehatjr updated assets and canvas size
+ History
+ 0 contributors
+54 lines (34 sloc)  990 Bytes
+  
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -21,9 +43,8 @@ function setup() {
   angle = -PI / 4;
   ground = new Ground(0, height - 1, width * 2, 1);
   tower = new Tower(150, 350, 160, 310);
-  cannon = new Cannon(180, 110, 110, 50, angle);
-  cannonBall = new CannonBall(cannon.x,cannon.y)
-
+  cannon = new Cannon(180, 110, 100, 50, angle);
+  cannonBall = new CannonBall(cannon.x, cannon.y);
 
 }
 
@@ -39,15 +60,18 @@ function draw() {
 
   cannon.display();
   tower.display();
-  cannonball.display();
+  cannonBall.display()
  
 }
 
-function keyReleased(){
 
-  if(keyCode===DOWN_ARROW){
-    cannonBall.shoot();
 
+
+
+
+function keyReleased() {
+  if (keyCode === DOWN_ARROW) {
+    cannonBall.shoot()
   }
 }
 
